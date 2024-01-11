@@ -1,0 +1,643 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Bubbles&family=Rubik+Vinyl&display=swap");
+:root {
+  --whiteColor: #f9feff;
+  --blackColor: #040404;
+  --whiteBgColor: #f9feff;
+  --whiteBgColor2: #f3f3f3;
+  --whiteBgColor3: #f6f6f6cf;
+  --grayBgColor: #f9feff40;
+  --blackBgColor: #01010185;
+  --bgColor: #f9feff24;
+  --bgColorPink: #f9f3f5;
+  --defaultColor: #fbc7db;
+  --defaultColor2: #e6246f;
+  --grayColor: #8a8a8a;
+}
+:export {
+  whiteColor: var(--whiteColor);
+  blackColor: var(--blackColor);
+  whiteBgColor: var(--whiteBgColor);
+  whiteBgColor2: var(--whiteBgColor2);
+  whiteBgColor3: var(--whiteBgColor3);
+  grayBgColor: var(--grayBgColor);
+  blackBgColor: var(--blackBgColor);
+  bgColor: var(--bgColor);
+  bgColorPink: var(--bgColorPink);
+  defaultColor: var(--defaultColor);
+  defaultColor2: var(--defaultColor2);
+  grayColor: var(--grayColor);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  width: 82%;
+}
+
+div {
+  display: block;
+}
+
+li {
+  list-style: none;
+  float: left;
+}
+
+a {
+  text-decoration: none;
+  color: var(--defaultColor2);
+}
+
+a i {
+  color: var(--defaultColor);
+}
+
+a * {
+  color: var(--defaultColor2);
+}
+
+.bo {
+  border-radius: 15px;
+}
+
+/* thiet lap font chu */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+.bg-main {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-size: cover;
+}
+/* can chinh chu*/
+
+.chugiua {
+  text-align: center;
+}
+
+.chutrang {
+  color: white;
+}
+
+.chuden {
+  color: black;
+}
+
+.chuxam {
+  color: var(--blackColor);
+}
+
+.haidong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* =====can chinh vat the===== */
+
+/* can giua */
+
+.giuavt {
+  margin: 0 auto;
+}
+
+/* can giua nhieu vat the */
+
+.giuangang {
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+}
+
+.giuadoc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* can trai */
+
+.traivt {
+  float: left;
+}
+
+/* can phai */
+
+.phaivt {
+  float: right;
+}
+
+.cantren {
+  margin: auto 10px;
+}
+
+/* ngang vt */
+
+.ngang {
+  display: flex;
+}
+
+.ngangnhieu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.o3xn {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.o3x2 {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+}
+
+.o4xn {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+}
+/* click */
+
+.an {
+  cursor: pointer;
+}
+
+.bong {
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.2));
+}
+
+/* nut submit */
+.butt-sm {
+  padding: 10px 20px;
+  background-color: var(--defaultColor);
+  color: var(--defaultColor2);
+  transition: 0.3s;
+  border: none;
+  font-weight: bolder;
+}
+
+.butt-sm:hover {
+  background-color: var(--blackColor);
+  color: var(--defaultColor);
+  padding: 12px 22px;
+}
+
+/* =====hieu ung===== */
+
+.cham {
+  transition: ease-in-out 0.3s;
+}
+
+.chamjs {
+  transition: 2s;
+}
+
+/* =====nav===== */
+
+/* navtop */
+
+.navtop {
+  background-color: var(--whiteBgColor);
+  width: 100%;
+  height: 50px;
+  filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.1));
+  top: 0;
+  font-size: 16px;
+  position: fixed;
+  z-index: 100;
+  transition: 0.3s;
+  z-index: 20;
+}
+
+.allnav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.call {
+  display: flex;
+  margin-top: 5px;
+}
+
+.call:hover {
+  color: white;
+}
+
+.login {
+  margin-top: 5px;
+}
+
+.post {
+  color: var(--defaultColor2);
+  border: 1px solid var(--defaultColor2);
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px;
+}
+
+.post:hover {
+  background-color: var(--defaultColor);
+  color: var(--defaultColor2);
+}
+
+.ntr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* logo */
+
+.logo {
+  font-size: 20px;
+  margin-top: 10px;
+  color: var(--defaultColor2);
+}
+
+.logo h1 {
+  font-family: "Rubik Vinyl", cursive;
+}
+
+.logo:hover {
+  color: var(--defaultColor);
+  top: 0;
+}
+.navbar-layout {
+  display: flex;
+  margin-top: 8px;
+}
+
+.search input {
+  padding: 5px 10px;
+  height: 35px;
+  margin-right: 10px;
+}
+/* thiet lap menu */
+
+.nhanh {
+  color: var(--defaultColor2);
+  padding: 10px 26px 13px;
+  border: none;
+  font-size: 17px;
+  filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.1));
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  background: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0) 50.1%,
+      var(--defaultColor) 50.2%
+    )
+    right;
+  background-size: 200%;
+  transition: 0.5s ease-out;
+  border-radius: 15px 15px 0px 0px;
+  margin: 0 5px;
+}
+.active {
+  background-color: var(--defaultColor);
+  border-radius: 15px 15px 0px 0px;
+}
+.dropdown:hover {
+  background-position: left;
+}
+.dropdown *:hover {
+  color: var(--whiteColor);
+}
+
+.dropdown-content {
+  top: 27px;
+  display: none;
+  position: absolute;
+  background-color: var(--whiteColor);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 99;
+  color: rgb(173, 173, 173);
+}
+
+.dropdown-content a {
+  color: var(--blackColor);
+  padding: 12px 16px;
+  margin-left: 10px;
+  display: block;
+  transition: 0.5s;
+}
+
+.dropdown-content a:hover {
+  font-size: 17px;
+  margin-left: 15px;
+  color: var(--defaultColor2);
+}
+
+.dropdown-content a:hover:after {
+  width: 80%;
+  left: 25px;
+}
+
+.dropdown-content a:after {
+  margin-top: 30px;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  background: var(--defaultColor);
+  transition: width 1s ease 0s, left 0.5s ease 0s;
+  width: 0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  width: 240px;
+  height: 260px;
+  margin-top: 15px;
+  border-radius: 15px;
+}
+
+.avtus {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-size: cover;
+}
+
+.users {
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.loginus {
+  display: flex;
+  color: var(--defaultColor2);
+}
+
+.loginus:hover {
+  color: var(--defaultColor);
+}
+
+.dropclick {
+  display: flex;
+  z-index: 100;
+}
+
+.dropclick:hover {
+  color: var(--defaultColor);
+}
+
+.dropclick-content {
+  font-family: Arial, Helvetica, sans-serif;
+  display: none;
+  right: 128px;
+  margin: 20px auto;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropclick-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  z-index: 100;
+}
+
+.dropclick-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+
+/* ======Phan cuoi===== */
+
+footer {
+  width: auto;
+  height: auto;
+  background-color: rgb(238, 238, 238);
+  color: var(--defaultColor);
+  filter: drop-shadow(0 -3px 2px rgba(0, 0, 0, 0.1));
+}
+
+.bottom {
+  width: auto;
+
+  margin-top: -5%;
+}
+
+.ftmain {
+  width: auto;
+  height: auto;
+  padding: 50px 0px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.p2 {
+  width: 80%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.p2 * {
+  color: var(--blackColor);
+}
+
+.ft {
+  margin-top: 20px;
+}
+
+.ifn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.canft {
+  margin-top: -80px;
+}
+
+.canft p {
+  padding: 10px 0 20px;
+}
+
+.ftitem {
+  margin-top: 15%;
+}
+
+.anh img {
+  width: 1050px;
+  height: 2550px;
+}
+
+/* back to top */
+
+#back-to-top {
+  display: none;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background-color: var(--blackColor);
+  border-radius: 20%;
+  bottom: 30px;
+  right: 30px;
+  z-index: 10;
+  transition: 3s;
+}
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--grayColor);
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: inherit;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--defaultColor2);
+}
+
+/* ========lam toi======== */
+
+#bruu {
+  cursor: pointer;
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: rgba(10, 13, 20, 0.4);
+  opacity: 1;
+}
+
+/* tooltip */
+
+.tip {
+  position: relative;
+  display: inline-block;
+}
+
+.tip .tiptext {
+  visibility: hidden;
+  width: 420px;
+  background-color: var(--defaultColor);
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 2;
+  top: 160%;
+  left: 0;
+  margin-left: -80px;
+}
+
+.tip .tiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent var(--defaultColor) transparent;
+}
+
+.tip:hover .tiptext {
+  visibility: visible;
+}
+
+.link {
+  display: flex;
+  margin-top: 80px;
+  font-size: 15px;
+  color: var(--blackColor);
+}
+
+.link a {
+  padding: 0 5px;
+  color: var(--blackColor);
+}
+
+.link a:hover {
+  color: var(--defaultColor);
+}
+
+.sao {
+  color: #c61c25;
+  padding: 0 5px;
+}
+
+.ribbon {
+  content: url("/img/buynow.png");
+  height: 30px;
+  width: auto;
+  margin-left: -5px;
+  margin-top: 12px;
+  position: absolute;
+  z-index: 10;
+}
+
+.ml10 {
+  margin-left: 10px;
+}
+
+.mr10 {
+  margin-right: 10px;
+}
+
+.m10 {
+  margin: 10px;
+}
+
+.mtb10 {
+  margin: 10px 0;
+}
+
+.mtb5 {
+  margin: 5px 0;
+}

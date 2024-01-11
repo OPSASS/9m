@@ -1,0 +1,14 @@
+.main {
+  height: 65%;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.main * {
+  margin-bottom: 50px;
+}
+
+.main h1 {
+  font-size: 140px;
+  color: var(--defaultColor);
+}

@@ -1,0 +1,97 @@
+extends ../../layout
+
+block link
+  link(rel="stylesheet", href="/css/pages/auth/login.css")
+  link(rel="stylesheet", href="/css/pages/auth/register.css")
+block body
+  if user
+    body(onload="isload();")
+  else
+    .container
+      .loginform
+        .loginimg
+          .giuadoc
+            .ask.bo.an.giuadoc
+              p Bạn đã có tài khoản?
+              a.bntadd(href="/auth/login") Đăng nhập
+        form#dangky.bo.bong(action="/auth/register", method="POST")
+          .form-group
+            .formitem
+              h1 Đăng ký
+              .formdky
+                .odk
+                  b.ngang
+                    p Nội dung có dấu
+                    .sao *
+                    p là bắt buộc
+                  .ngang
+                    h3 Thông tin tài khoản
+                    .sao *
+                  input.odn(
+                    type="text",
+                    name="username",
+                    required,
+                    placeholder="Tên đăng nhập *",
+                    value=""
+                  )
+                  input.odn(
+                    type="password",
+                    name="password",
+                    required,
+                    minlength="6",
+                    placeholder="Tạo mật khẩu ít nhất 6 ký tự *",
+                    value=""
+                  )
+                  input.odn(
+                    type="password",
+                    name="cpassword",
+                    required,
+                    minlength="6",
+                    placeholder="Nhập lại mật khẩu *",
+                    value=""
+                  )
+                  .ngang
+                    h3 Thông tin cá nhân
+                    span.sao *
+                  input.odn(
+                    type="text",
+                    name="fullname",
+                    required,
+                    placeholder="Họ và tên *",
+                    value=""
+                  )
+                  input.odn(
+                    type="text",
+                    name="phone",
+                    required,
+                    placeholder="Số điện thoại *",
+                    value=""
+                  )
+                  .ngang
+                    h3 Địa chỉ liên hệ
+                    .sao *
+                  input.odn(
+                    type="text",
+                    name="address",
+                    placeholder="Nhập địa chỉ cụ thể: Số nhà/Đường/Ngách...",
+                    value=""
+                  )
+
+                  .oask
+                    p Bạn là?
+                    span
+                      input#boy(type="radio", name="sex", value="Nam", checked)
+                      label(for="boy") Nam
+                    span
+                      input#girl(type="radio", name="sex", value="Nữ") 
+                      label(for="girl") Nữ
+                  .giuangang(style="margin-top: 20px")
+                    input#yes.checkbox(type="checkbox", name="yes", checked) 
+                    label(for="yes") Tôi đồng ý với điều khoản dịch vụ của M9
+            input.bntsm(type="submit", value="Đăng ký")
+
+block script
+  script(type="text/javascript").
+    function isload() {
+      window.location.href = "/";
+    }

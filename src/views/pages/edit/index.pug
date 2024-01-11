@@ -1,0 +1,68 @@
+extends ../../layout
+
+block link
+  link(rel="stylesheet", href="/css/pages/upload/upload.css")
+
+block body
+  body
+    if user.isAdmin == true
+      form(
+        action="/san-pham/" + post.id + "/edit?_method=PUT",
+        method="post",
+        name="formPost",
+        style="padding: 100px 60px"
+      )
+        p Loại sản phẩm
+        .type
+          input#t1(type="radio", name="type", value="Giày dép", required)
+          label(for="t1") Giày dép
+          input#t2(type="radio", name="type", value="Quần áo", required)
+          label(for="t2") Quần áo
+          input#t3(type="radio", name="type", value="Váy", required)
+          label(for="t3") Váy
+          input#t4(type="radio", name="type", value="Phụ kiện", required)
+          label(for="t4") Phụ kiện
+          input#t5(type="radio", name="type", value="Đồng hồ", required)
+          label(for="t5") Đồng hồ
+
+        p Sản phẩm dành cho
+        .fr
+          input#intendedM(type="radio", name="intended", value="Nam", required)
+          label(for="intendedM") Nam
+          input#intendedG(type="radio", name="intended", value="Nữ", required)
+          label(for="intendedG") Nữ
+
+        p Thông tin chung
+        .ip-fr
+          input(
+            type="text",
+            name="name",
+            placeholder="Nhập tên sản phẩm",
+            required,
+            style="margin-right: 20px; width: 38%",
+            value=post.name
+          )
+          input(
+            type="number",
+            name="price",
+            placeholder="Nhập giá sản phẩm",
+            required,
+            value=post.price
+          )
+
+        p Thông tin mô tả
+        textarea(
+          name="desc",
+          cols="30",
+          rows="10",
+          placeholder="Nhập mô tả cho sản phẩm"
+        )= post.desc
+
+        .butt
+          input.butt-sm(type="submit", value="Lưu Thay đổi")
+    else
+      div(style="width: 100%; height: 39.5%")
+        .giuadoc(style="margin-top: 20%")
+          h1 Bạn không có quyền truy cập vào tài khoản này!
+          a.mtb10(href="/") Trở về trang chủ
+block script

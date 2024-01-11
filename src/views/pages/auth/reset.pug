@@ -1,0 +1,46 @@
+extends ../../layout
+
+block link
+  link(rel="stylesheet", href="/css/pages/auth/login.css")
+block body
+  if user
+    body(onload="isload();")
+  else
+    .container
+      .loginform
+        .loginimg
+          .giuadoc
+            .ask.bo.an.giuadoc
+              p Bạn chưa có tài khoản?
+              a.bntadd(href="/auth/register") Đăng ký
+        form#dangnhap.bo.bong(action="/auth/reset", method="POST")
+          .form-group
+            .formitem
+              h1 Lấy lại mật khẩu
+              input.odn(
+                type="text",
+                name="username",
+                required,
+                placeholder="Nhập tên đăng nhập"
+              )
+              input.odn(
+                type="password",
+                name="password",
+                required,
+                minlength="8",
+                placeholder="Mật khẩu mới"
+              )
+              input.odn(
+                type="password",
+                name="cpassword",
+                required,
+                minlength="8",
+                placeholder="Nhập lại mật khẩu"
+              )
+            input.bntsm(type="submit", value="Lấy lại mật khẩu")
+
+block script
+  script(type="text/javascript").
+    function isload() {
+      window.location.href = "/";
+    }

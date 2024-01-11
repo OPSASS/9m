@@ -1,0 +1,43 @@
+.slideShow {
+  margin-top: -10px;
+  width: 100%;
+  height: auto;
+}
+.sl {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  margin-top: 60px;
+}
+.box-item {
+  width: 100%;
+  height: auto;
+  background-color: var(--whiteBgColor);
+  overflow: hidden;
+}
+
+.box-item .pic-item {
+  width: 100%;
+  position: relative;
+}
+
+.pic-2,
+.pic-1 {
+  object-fit: cover;
+  width: 100%;
+  max-height: 455px;
+  height: auto;
+}
+.pic-2 {
+  display: none;
+}
+.box-item .pic-item:hover .pic-2 {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.box-item .infor {
+  padding: 15px 0;
+}

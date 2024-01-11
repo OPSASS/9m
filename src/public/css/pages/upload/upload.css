@@ -1,0 +1,24 @@
+.type,
+.fr {
+  margin: 10px 0;
+}
+.type input,
+.fr input {
+  margin: 0 5px 0 20px;
+}
+.ip-fr {
+  margin: 10px;
+}
+.ip-fr input,
+.pic-up {
+  padding: 10px;
+}
+textarea {
+  margin: 10px;
+  padding: 10px;
+  width: 52%;
+}
+.butt {
+  margin-top: 50px;
+  margin-left: 20%;
+}

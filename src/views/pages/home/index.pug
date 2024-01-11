@@ -1,0 +1,51 @@
+extends ../../layout
+
+block link
+  link(rel="stylesheet", href="/css/pages/home/home.css")
+
+block body
+  - const POST = process.env.PUBLIC_FOLDER + "images/";
+    body
+      .slideShow
+        img.sl(src="/img/slide.png", alt="sl")
+        div(style="padding: 45px")
+          h2 Sản phẩm mới
+          .o4xn(style="margin: 15px 0")
+            each post in posts.slice(0, 8)
+              a.box-item(href="/san-pham/" + post.slug)
+                .pic-item
+                  img.pic-1(
+                    src=POST + post.files[0].fileName,
+                    alt=post.files[0].fileName
+                  ) 
+                  if post.files[1]
+                    img.pic-2(
+                      src=POST + post.files[1].fileName,
+                      alt=post.files[1].fileName
+                    ) 
+                .infor
+                  p= moment(post.createdAt).locale("vi").fromNow()
+                  b= post.name
+                  .price= post.price + "đ"
+
+        .giuadoc(style="padding: 45px")
+          h2 Tất cả sản phẩm
+          .o4xn(style="margin: 15px 0")
+            each post in posts1
+              a.box-item(href="/san-pham/" + post.slug)
+                .pic-item
+                  img.pic-1(
+                    src=POST + post.files[0].fileName,
+                    alt=post.files[0].fileName
+                  ) 
+                  if post.files[1]
+                    img.pic-2(
+                      src=POST + post.files[1].fileName,
+                      alt=post.files[1].fileName
+                    ) 
+                .infor
+                  b= post.name
+                  .price= post.price + "đ"
+
+block script
+  script(type="text/javascript").

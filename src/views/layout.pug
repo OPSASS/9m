@@ -1,0 +1,139 @@
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title #{ title } | M9
+    block link
+    link(rel="stylesheet", href="/css/layout.css")
+    link(
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css",
+      rel="stylesheet"
+    )
+    link(
+      rel="stylesheet",
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    )
+    link(
+      rel="stylesheet",
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    )
+    link(rel="icon", href="/img/logo.ico")
+    - url = "http://localhost:8800/images/";
+
+  block nav
+    nav
+      .navtop.chuxam.font2
+        .container
+          .allnav
+            a.logo.ngang(href="/")
+              h1.font3.cham M
+              p 9
+            .search.giuangang
+              input(
+                type="search",
+                value="",
+                placeholder="Tìm kiếm sản phẩm..."
+              )
+              .bi.bi-search
+            .font2.navbar-layout
+              .dropdown
+                if title == "Trang chủ"
+                  a.nhanh.bi.bi-house.active.an(href="/")
+                else
+                  a.nhanh.bi.bi-house.an(href="/")
+              .dropdown
+                if title == "Sản phẩm dành cho Nam"
+                  p.nhanh.active(href="/") Nam
+                else
+                  a.nhanh(href="/") Nam
+                .dropdown-content.animate__animated.animate__bounceIn
+                  a(href="/") Giày dép Nam
+                  a(href="/") Quần áo Nam
+                  a(href="/") Phụ kiện
+                  a(href="/") Đồng hồ
+                  a(href="/") Sản phẩm mới
+              .dropdown
+                if title == "Sản phẩm dành cho Nữ"
+                  a.nhanh.active(href="/") Nữ
+                else
+                  a.nhanh(href="/") Nữ
+                .dropdown-content.animate__animated.animate__bounceIn
+                  a(href="/") Giày dép Nữ
+                  a(href="/") Quần áo Nữ
+                  a(href="/") Váy
+                  a(href="/") Phụ kiện
+                  a(href="/") Đồng hồ
+                  a(href="/") Sản phẩm mới
+
+              .dropdown
+                if title == 'Sắp ra mắt'
+                  a.nhanh.active(href="/") Sắp ra mắt
+                else
+                  a.nhanh(href="/") Sắp ra mắt
+
+              .dropdown
+                if title == "Giảm giá"
+                  a.nhanh.active(href="/") Giảm giá
+                else
+                  a.nhanh(href="/") Giảm giá
+                .dropdown-content.animate__animated.animate__bounceIn
+                  a(href="/") Tất cả sản phẩm
+                  a(href="/") Đồ cho Nam
+                  a(href="/") Đồ cho Nữ
+                  a(href="/") Khác
+            .ntr
+              if user
+                if user.isAdmin == true
+                  a.post.cham(
+                    href="/san-pham/them-san-pham",
+                    style="margin: 0 10px"
+                  ) Thêm sản phẩm
+                else
+                  a.bi.ngang.cham(style="margin: 0 10px", href="/")
+                    .bi-basket2-fill
+                    p(style="margin-left: 10px") Giỏ hàng
+                span |
+                .loginus(style="margin: 0 10px")
+                  if user.profilePicture
+                    img.avtus(src=user.profilePicture)
+                  else
+                    img.avtus(src="/img/no-avt.png")
+                  .users.an(onclick="Dropclick()")
+                    .dropclick= user.username
+                      i.bx.bx-chevron-down
+                        #Dropclick.dropclick-content
+                          a(href="/profile/" + user._id)
+                            b= user.fullname
+                          a(href="/auth/logout") ĐĂNG XUẤT
+
+              else
+                a.bi.bi-basket2-fill.an.cham(href="/")
+                p(style="margin: 0 10px") 
+                |
+                a.loginus(href="/auth/login")
+                  .giuangang
+                    i.bx.bxs-user-circle.bx-md(style="margin-right: 5px")
+                    p(style="color: var(--defaultColor2)") Đăng nhập
+
+  block body
+  block footer
+  footer.bo
+    .container
+      .ftmain
+        div(style="margin: 0 auto")
+          a(href="/") Chính sách Bảo mật
+          span(style="margin: 5") |
+          a(href="/") Điều Khoản và Điều Kiện
+          span(style="margin: 5") |
+          a(href="/") XUẤT BẢN BỞI
+          span(style="margin: 5") |
+          a(href="/") © 2023 Công ty TNHH M9 Việt Nam
+
+    script(src="/js/dropclick.js")
+    script(
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    )
+    script(src="/js/addr.js")
+    script(src="/js/sweetalert2.all.min.js")
+    block script
